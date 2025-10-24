@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dokumentasi KKL Kelompok 17 - Universitas PGRI Semarang</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="icon" href="https://i.ibb.co/L1g1g3d/logo-upgris.png" type="image/png">
+
+    <style>
+        /* CSS ini akan menimpa (override) style .hero dari file style.css 
+          karena ditaruh setelahnya (lebih spesifik).
+        */
+        
+        .hero {
+            position: relative;
+            /* Penting untuk menumpuk elemen */
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white-color);
+            background-color: var(--dark-color);
+            /* Latar belakang jika gambar gagal */
+            overflow: hidden;
+            /* Mencegah gambar 'bocor' */
+            /* HAPUS 'transition' dari sini agar .hero-content tidak ikut pudar */
+            /* transition: background-image 1s ease-in-out, opacity 1s ease-in-out; */
+        }
+        /* 1. Kontainer untuk gambar latar */
+        
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+            /* Di belakang konten */
+        }
+        /* 2. Styling untuk div yang akan menampilkan gambar */
+        
+        .hero-background .bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            /* Kunci Transisi: ini yang membuat CROSSFADE */
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+            /* Durasi fade 1.5 detik */
+        }
+        /* 3. Kelas 'active' akan membuat gambar terlihat */
+        
+        .hero-background .bg-image.active {
+            opacity: 1;
+        }
+        /* 4. Konten (Teks, Tombol) */
+        
+        .hero-content {
+            position: relative;
+            /* Pastikan posisinya di atas */
+            z-index: 2;
+            /* HARUS di atas z-index .hero-background */
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            /* Opsional: beri sedikit latar agar lebih terbaca */
+            background-color: rgba(0, 0, 0, 0.25);
+            padding: 1.5rem 2rem;
+            border-radius: 10px;
+        }
+        /* Ini untuk style navbar saat di-scroll */
+        
+        .navbar.scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <img src="upgris.png" alt="Logo UPGRIS" style="height: 50px; margin-right: 10px;"> DOKUMENTASI KKL
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#hero">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tentang">Tentang KKL</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#galeri">Galeri Kunjungan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="anggota.html">anggota</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero" id="hero">
+
+        <div class="hero-background">
+            <div class="bg-image active"></div>
+            <div class="bg-image"></div>
+        </div>
+
+        <div class="hero-content">
+            <h1 class="display-4">Dokumentasi Kuliah Kerja Lapangan</h1>
+            <p class="lead">Sebuah Perjalanan Menganalisis Industri Kreatif oleh Kelompok 17, Program Studi Informatika, Universitas PGRI Semarang.</p>
+            <a href="#tentang" class="btn btn-primary btn-lg">Mulai Menjelajah</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="tentang">
+            <div class="container">
+                <h2 class="section-title">Tentang Kuliah Kerja Lapangan</h2>
+                <p class="section-subtitle">Memahami tujuan, manfaat, dan latar belakang diadakannya kegiatan KKL di Bali sebagai sarana pembelajaran integratif antara teori dan praktik di lapangan.</p>
+                <div class="row g-4 align-items-center">
+                    <div class="col-lg-6">
+                        <img src="bali-pagoda-indonesia.jpg" class="img-fluid rounded-3 shadow-lg" alt="Suasana Belajar KKL">
+                    </div>
+                    <div class="col-lg-6">
+                        <h3>Latar Belakang Kegiatan</h3>
+                        <p>Kuliah Kerja Lapangan (KKL) merupakan kegiatan akademik untuk memberikan pengalaman langsung kepada mahasiswa dalam mengamati dan mengeksplorasi dunia industri. Bali dipilih sebagai lokasi karena potensinya yang besar dalam bidang
+                            pariwisata, industri kreatif, dan budaya yang berhasil memadukan nilai tradisional dengan kemajuan modern.</p>
+                        <div class="accordion" id="accordionKKL">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <strong>Tujuan KKL</strong>
+                                </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionKKL">
+                                    <div class="accordion-body">
+                                        Tujuan utama KKL adalah untuk memberikan pengalaman langsung kepada mahasiswa mengenai dunia kerja industri, menghubungkan teori yang dipelajari di perkuliahan dengan praktik di lapangan, serta mempelajari potensi pariwisata, budaya, dan ekonomi kreatif
+                                        di Bali. Kunjungan industri utama dilaksanakan di Balai Diklat Industri (BDI) Denpasar, sebuah Unit Pelaksana Teknis (UPT) di bawah Kementerian Perindustrian RI yang berfokus pada pengembangan SDM di industri kreatif,
+                                        seperti animasi, kerajinan, dan barang seni
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <strong>Manfaat Bagi Mahasiswa</strong>
+                                </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionKKL">
+                                    <div class="accordion-body">
+                                        Dari kegiatan Kuliah Kerja Lapangan (KKL) di BDI Denpasar, kami bisa merasakan langsung bagaimana suasana belajar di dunia industri...
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="galeri" class="bg-light">
+            <div class="container">
+                <h2 class="section-title">Galeri Kunjungan & Kegiatan</h2>
+                <p class="section-subtitle">Momen-momen penting yang terekam selama proses KKL di berbagai lokasi ikonik dan pusat industri kreatif di Bali.</p>
+                <h3>klik untuk info dari tempat yang kami kunjungi</h3>
+
+                <h4></h4>
+                <div class="gallery-grid">
+                    <a href="bdi-denpasar.html" class="gallery-item"><img src="bdi.jpeg" alt="BDI Denpasar">
+                        <div class="gallery-item-title">BDI Denpasar</div>
+                    </a>
+                    <a href="gwk.html" class="gallery-item"><img src="gwk.jpg" alt="Garuda Wisnu Kencana">
+                        <div class="gallery-item-title">Garuda Wisnu Kencana</div>
+                    </a>
+                    <a href="ulun-danu.html" class="gallery-item"><img src="bali-pagoda-indonesia.jpg" alt="Pura Ulun Danu">
+                        <div class="gallery-item-title">Pura Ulun Danu</div>
+                    </a>
+                    <a href="tari-kecak.html" class="gallery-item"><img src="kecak.jpg" alt="Tari Kecak">
+                        <div class="gallery-item-title">Tari Kecak</div>
+                    </a>
+                    <a href="krisna.html" class="gallery-item"><img src="krisna.jpg" alt="Oleh-Oleh Krisna">
+                        <div class="gallery-item-title">Oleh-Oleh Krisna</div>
+                    </a>
+                    <a href="pandawa.html" class="gallery-item"><img src="pantai.jpeg" alt="Pantai Pandawa">
+                        <div class="gallery-item-title">Pantai Pandawa</div>
+                    </a>
+                    <a href="joger.html" class="gallery-item"><img src="joger.jpg" alt="Oleh-Oleh Joger">
+                        <div class="gallery-item-title">Oleh-Oleh Joger</div>
+                    </a>
+                    <a href="jimbaran.html" class="gallery-item"><img src="jimbaran.jpg" alt="Cafe Jimbaran">
+                        <div class="gallery-item-title">Cafe Jimbaran</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="laporan-cta" class="bg-light">
+            <div class="container text-center">
+                <h2 class="section-title">Unduh Laporan Lengkap</h2>
+                <p class="section-subtitle">Temukan analisis mendalam, data, dan hasil pembahasan yang telah kami rangkum dalam laporan KKL ini.</p>
+
+                <a href="https://drive.google.com/file/d/1e5s6ZS1UrZBj1h08-Euu95SXIy-c2YpM/view?usp=drivesdk" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">
+                    <i class="bi bi-cloud-arrow-down-fill me-2"></i>Unduh Laporan Lengkap
+                </a>
+
+            </div>
+        </section>
+    </main>
+
+
+    <footer class="footer text-white pt-5 pb-4" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('bali-pagoda-sunrise-indonesia.jpg');
+           background-size: cover;
+           background-position: center;">
+
+        <div class="container text-center text-md-start">
+            <div class="row text-center text-md-start">
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 fw-bold text-primary">Universitas PGRI Semarang</h5>
+                    <p>Program Studi Informatika, Fakultas Teknik dan Informatika. Berkomitmen untuk menghasilkan lulusan yang kompeten dan siap bersaing di era digital.</p>
+                </div>
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 fw-bold">Tautan Cepat</h5>
+                    <p><a href="#tentang" class="text-white">Tentang KKL</a></p>
+                    <p><a href="#galeri" class="text-white">Galeri</a></p>
+                </div>
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 fw-bold">Kontak Prodi</h5>
+                    <p><i class="bi bi-geo-alt-fill me-3"></i> Jl. Sidodadi Timur No.24, Semarang</p>
+                    <p><i class="bi bi-envelope-fill me-3"></i> informatika@upgris.ac.id</p>
+                    <p><i class="bi bi-telephone-fill me-3"></i> (024) 8316377</p>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-7 col-lg-8">
+                    <p>&copy; 2025 - Dokumentasi KKL Kelompok 17 Informatika UPGRIS.</p>
+                </div>
+                <div class="col-md-5 col-lg-4">
+                    <div class="text-center text-md-end">
+                        <ul class="list-unstyled list-inline">
+                            <li class="list-inline-item">
+                                <a href="#" class="btn-floating btn-sm text-white fs-4"><i class="bi bi-facebook"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#" class="btn-floating btn-sm text-white fs-4"><i class="bi bi-twitter"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#" class="btn-floating btn-sm text-white fs-4"><i class="bi bi-instagram"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // --- JavaScript for Crossfade Slideshow ---
+
+        // 1. Daftar gambar Anda
+        const images = [
+            'bali-pagoda-sunrise-indonesia.jpg',
+            'bdi.jpeg',
+            'pantai.jpeg'
+            // Ganti nama file gambar di atas sesuai kebutuhan
+        ];
+
+        // 2. Ambil elemen-elemen yang dibutuhkan
+        const bgDivs = document.querySelectorAll('.hero-background .bg-image');
+        const bgDiv1 = bgDivs[0];
+        const bgDiv2 = bgDivs[1];
+
+        let currentImageIndex = 0;
+
+        // 3. Atur gambar pertama
+        bgDiv1.style.backgroundImage = `url('${images[currentImageIndex]}')`;
+        // bgDiv1.classList.add('active'); // Seharusnya sudah 'active' dari HTML
+
+        // 4. Fungsi untuk mengganti gambar
+        function changeBackgroundImage() {
+            // Tentukan gambar berikutnya
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            const nextImageUrl = `url('${images[currentImageIndex]}')`;
+
+            // Tentukan div mana yang sedang aktif (terlihat) dan tidak aktif
+            let activeDiv = document.querySelector('.hero-background .bg-image.active');
+            let inactiveDiv = document.querySelector('.hero-background .bg-image:not(.active)');
+
+            // Ganti gambar di div yang TIDAK terlihat (inactive)
+            inactiveDiv.style.backgroundImage = nextImageUrl;
+
+            // Tukar kelas 'active' untuk memicu transisi CSS
+            // (Div yang lama akan pudar, div yang baru akan muncul)
+            activeDiv.classList.remove('active');
+            inactiveDiv.classList.add('active');
+        }
+
+        // 5. Ganti gambar setiap 5 detik (5000 milidetik)
+        setInterval(changeBackgroundImage, 2000);
+    </script>
+
+    <script>
+        const nav = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY >= 56) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+
+</html>
